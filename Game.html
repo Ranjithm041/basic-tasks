@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Game</title>
+    <style>
+        #title{
+            text-align: center;
+            color: coral;
+            font-size: 25px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        .box{
+           text-align: center;
+            margin: auto;
+            padding: 10px;
+            font-size: x-large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+        }
+        #pl1,#pl2{
+            /* width: auto;
+            height: 40px; */
+            text-align: center;
+            font-size: 16px;
+        }
+        #submit{
+            width: 20%;
+            height: 60px;
+            font-size: 20px;
+            background-color:lightgreen ;
+            border: 1px solid green;   
+        }
+        #Result{
+            color: rgb(255, 8, 0);
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="title"><strong>STONE</strong>---<strong>PAPER</strong>---<strong>SCISSOR</strong> </p>
+    
+    <div class="box">
+        <span>Player1:</span> 
+        <select name="Player1" id="pl1">
+            <option disabled selected > -- select an option ---</option>
+            <option value="Stone">Stone</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissor">Scissor</option>
+        </select> <br> <br>
+        <span>Player2:</span>
+        <select name="Player2" id="pl2">
+            <option disabled selected > --- select an option -- </option>
+            <option value="Stone">Stone</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissor">Scissor</option>
+        </select> <br> <br>
+        <input type="submit" value="Play" onclick="f1()" id="submit">
+    </div>
+    
+    <script>
+        function f1() {
+            let p1 = document.getElementById("pl1").value;
+            let p2 = document.getElementById("pl2").value;
+            let div = document.createElement("div");
+            div.id = "Result";
+            document.getElementsByTagName("body")[0].appendChild(div);
+            if (p1 == p2) {
+                div.innerHTML = "Draw! ✌";
+            } else if ((p1 == "Paper" && p2 == "Scissor") || (p1 == "Scissor" && p2 == "Stone") || (p1 == "Stone" && p2 == "Paper")) {
+                div.innerHTML = "Player2 Won 🏆"
+            }
+            else if ((p1 == "Scissor" && p2 == "Paper") || (p1 == "Stone" && p2 == "Scissor") || (p1 == "Paper" && p2 == "Stone")) {
+                div.innerHTML = "Player1 Won 🏆"
+            }else{
+                div.innerHTML =" Please ! Choose Your Choice"
+            }
+        }
+    </script>
+</body>
+
+</html>

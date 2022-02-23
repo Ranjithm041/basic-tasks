@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    <label for="str">Remove The First and Last element</label>  <br> <br>
+    <input type="text" id="str">
+    <input type="submit" value="submit" onclick="f1()">
+   
+    <script>
+        function f1() {
+            // input = "hello"   --------Remove the fisrt and last element   output = ell 
+        let temp=[];
+       let str= document.getElementById("str").value;
+           let splitted=str.split(" ")
+        for (let i = 0; i < splitted.length; i++) {
+            temp +=splitted[i].substr(1,splitted[i].length-2)+" ";    
+        }
+        document.write(temp);
+        }
+      
+    </script>
+    
+</body>
+</html>

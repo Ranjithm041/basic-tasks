@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="fnum">FirstNumber:</label> <input type="text" id="fnum"> <br>
+        <label for="snum">SecondNumber:</label> <input type="text" id="snum"> <br>
+        <input type="submit" value="Submit" onclick="f1()">   
+       <p id="para"></p>
+    </div>
+    <script>
+        function f1() {           
+           let fn =parseInt(document.getElementById("fnum").value);
+           let sn = parseInt(document.getElementById("snum").value);
+           document.getElementById("para").innerHTML =`${
+         "Addition Result : "+(fn+sn)+"<br> <br>"+
+         "Substraction Result : "+(fn-sn)+"<br> <br>"+
+         "Multiplication Result: "+(fn*sn)+"<br> <br>"+
+         "Division Result: "+(fn/sn)+"<br> <br>"+
+         "Module Result: "+(fn%sn)+"<br> <br>"
+           }`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        .title{
+            text-align: center;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 2px;
+            color: chocolate;
+            text-indent: -30px;
+        }
+        .box{ 
+            background-image: linear-gradient(to right,rgb(15, 206, 253),rgb(65, 62, 62));
+            border: 3px solid lightgray;
+            height: 520px;
+            width: 30%;
+            margin:0px 00px 0px 450px;
+            border-radius: 15px;
+            /* box-shadow: 0px 0px 10px 15px gray;  */
+        }
+        .button{
+            display: flex;
+            background-color: transparent;
+            color: chocolate;
+           padding: 30px;
+           border: 1px ;
+           border-radius: 10px;
+           font-size: 30px;
+           line-height: 25px;
+        }
+        .button:hover{
+            color: rgb(217, 231, 14);
+            box-shadow:inset 0px 0px 10px rgb(105, 105, 105);
+            
+        }
+        #result{
+            padding-inline-start: 5px;
+            border-radius: 5px;
+            border: 2px solid rgb(128, 128, 128);
+            width: 97%;
+            height: 87px;
+            font-variant-numeric:slashed-zero;
+            font-size:30px;
+            background-color: transparent;
+            color: black;
+        }
+        #C,#equal{
+            color: chartreuse;
+            background-color: transparent;
+            padding: 30px;
+            border-radius: 10px;
+            border: 0px solid black;
+            font-size:20px;
+            line-height: 30px;
+        }    
+        .tab{
+            
+            /* border: 2px solid coral; */
+            border-radius: 10px;
+            margin: 40px 10px 20px 40px;
+            width: 50%;
+            background-image: linear-gradient(to right,rgb(15, 206, 253),rgb(65, 62, 62));
+            border-collapse:collapse;
+            box-shadow: 0px 0px 10px 5px rgb(184, 187, 190);
+   
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+         <h2>Calculator</h2>
+    </div>
+    <div class="box">
+        <table class="tab">
+            <tr>
+                <td colspan="3"><input type="text" placeholder="0" id="result" onclick="result()" readonly></td>
+                <td><input id="C" type="button" value="C" onclick="clearScreen()"></td>
+            </tr>
+            <tr>
+                <td> <input class="button" type="button" value="1" onclick="display('1')" onkeydown="f1()" > </td>
+                <td> <input class="button" type="button" value="2" onclick="display('2')" > </td>
+                <td> <input class="button" type="button" value="3" onclick="display('3')" > </td>
+                <td> <input class="button" type="button" value="/" onclick="display('/')" > </td>
+            </tr>
+            <tr>
+                <td> <input class="button" type="button" value="4" onclick="display('4')" > </td>
+                <td> <input class="button" type="button" value="5" onclick="display('5')" > </td>
+                <td> <input class="button" type="button" value="6" onclick="display('6')" > </td>
+                <td> <input class="button" type="button" value="-" onclick="display('-')" > </td>
+            </tr>
+            <tr>
+                <td> <input class="button" type="button" value="7" onclick="display('7')" > </td>
+                <td> <input class="button" type="button" value="8" onclick="display('8')" > </td>
+                <td> <input class="button" type="button" value="9" onclick="display('9')" > </td>
+                <td> <input class="button" type="button" value="+" onclick="display('+')" > </td>
+            </tr>
+            <tr>
+                <td> <input class="button" type="button" value="." onclick="display('.')" > </td>
+                <td> <input class="button" type="button" value="0" onclick="display('0')" > </td>
+                <td> <input id="equal" type="button" value="=" onclick="calculate()" > </td>
+                <td> <input class="button" type="button" value="*" onclick="display('*')" > </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+        let id=document.getElementById("result");
+        function clearScreen() {
+            id.value = "";
+        }
+        function display(values) {
+            id.value += values;
+        }
+        function calculate() {
+            let a = id.value;
+            q = eval(a);
+            id.value = q;
+       }
+    </script>
+</body>
+</html>
